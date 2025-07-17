@@ -44,3 +44,9 @@ body.dark {
   background-color: #111;
   color: #eee;
 }
+@media (max-width: 500px) {
+  body {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
