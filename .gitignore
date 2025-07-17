@@ -1,2 +1,17 @@
-.env
-.env
+# System junk
+.DS_Store
+Thumbs.db
+
+# Node modules
+node_modules/
+npm-debug.log
+
+# macOS / Linux
+*.swp
+.idea/
+.vscode/
+.cache/
+*.bak
+
+# Dev containers
+.devcontainer/
