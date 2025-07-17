@@ -36,3 +36,6 @@ drawRays();
 function connectWallet() {
   alert("Web3 Wallet Connect Coming Soon 🚀");
 }
+function toggleTheme() {
+  document.body.classList.toggle("dark");
+}
