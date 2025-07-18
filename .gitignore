@@ -1,17 +1,8 @@
-# System junk
-.DS_Store
-Thumbs.db
-
-# Node modules
+.env
+*.env
+*.secret
+.env.*
+wallet.js
 node_modules/
-npm-debug.log
-
-# macOS / Linux
-*.swp
-.idea/
-.vscode/
-.cache/
-*.bak
-
-# Dev containers
-.devcontainer/
+dist/
+.env.local
