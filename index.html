@@ -1,20 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>🍎 Magic For iOS</title>
-  <link rel="stylesheet" href="system.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>💎 Magic Wallets</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 1rem;
+      gap: 2rem;
+    }
+
+    h1 {
+      color: violet;
+      font-size: 2.5rem;
+      text-shadow: 0 0 15px #a600ff;
+      animation: glow 2s infinite alternate;
+    }
+
+    .wallet {
+      border: 2px solid;
+      border-radius: 15px;
+      padding: 1.5rem;
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(255,0,128,0.2), rgba(128,0,255,0.2));
+      box-shadow: 0 0 15px 3px rgba(255,0,128,0.4);
+      transition: all 0.3s ease;
+    }
+
+    .wallet:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 6px rgba(255,0,128,0.8);
+    }
+
+    .type {
+      font-weight: bold;
+      color: #ff0055;
+      text-shadow: 0 0 5px #ff3377;
+    }
+
+    .address {
+      font-family: monospace;
+      font-size: 1rem;
+      color: #eee;
+      word-break: break-all;
+      margin-top: 0.5rem;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #9f3fff, 0 0 20px #9f3fff;
+      }
+      to {
+        text-shadow: 0 0 25px #ff3fd4, 0 0 35px #ff3fd4;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🍎 Magic For iOS</h1>
-    <p>Welcome to the neo-iOS styled Web3-ready dashboard!</p>
-    <a href="https://github.com/SoeAung95/For-Ios" target="_blank">View on GitHub</a>
+  <h1>🧿 Magic's Web3 Wallets</h1>
+
+  <div class="wallet">
+    <div class="type">💰 Ethereum (ETH)</div>
+    <div class="address">0x1396b538371366cc47ac0c5670bc6883588fa101</div>
+  </div>
+
+  <div class="wallet">
+    <div class="type">🟡 Binance Smart Chain (BNB)</div>
+    <div class="address">0x09b5CB3dD6b741826911d094bD2364123eEfb98F</div>
+  </div>
+
+  <div class="wallet">
+    <div class="type">🪙 TON</div>
+    <div class="address">UQAKpnqJBO_ZB3NiJgsH-C-7to3hXtUYHaD-R28Vei8nw9Ut</div>
   </div>
 </body>
 </html>
-<button onclick="toggleTheme()">🌓 Theme ပြောင်းမယ်</button>
-<h2>💳 0x1396b538371366cc47ac0c5670bc6883588fa101 </h2>
-<input type="text" placeholder="0x123..." style="width: 100%;" />
-<button>🔌 Wallet ချိတ်မယ်</button>
-<link rel="manifest" href="manifest.json">
