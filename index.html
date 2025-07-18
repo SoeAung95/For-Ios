@@ -9,12 +9,13 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="system.css" />
 
-  <!-- Favicon for browser tab -->
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 
 <body>
   <header>
+    <img src="https://imagedelivery.net/u8GMYyd0Bs8kckF-WHWZcg/logo/ios-icon" alt="Logo" style="width: 80px; border-radius: 20px;" />
     <h1>🍎 MagicStone</h1>
     <p>Welcome to your Web3-ready, iOS-styled dashboard. Tap to copy wallet addresses!</p>
   </header>
@@ -24,26 +25,31 @@
       <h2>🧿 Magic’s Web3 Wallets</h2>
 
       <div class="wallet eth" onclick="copyToClipboard('0x1396b538371366cc47ac0c5670bc6883588fa101')">
+        <img src="https://imagedelivery.net/u8GMYyd0Bs8kckF-WHWZcg/eth/thumbnail" alt="ETH" />
         <h3>💰 Ethereum (ETH)</h3>
         <p>0x1396b538371366cc47ac0c5670bc6883588fa101</p>
       </div>
 
       <div class="wallet bnb" onclick="copyToClipboard('0x09b5CB3dD6b741826911d094bD2364123eEfb98F')">
+        <img src="https://imagedelivery.net/u8GMYyd0Bs8kckF-WHWZcg/bnb/thumbnail" alt="BNB" />
         <h3>🟡 Binance Smart Chain (BNB)</h3>
         <p>0x09b5CB3dD6b741826911d094bD2364123eEfb98F</p>
       </div>
 
       <div class="wallet ton" onclick="copyToClipboard('UQAKpnqJBO_ZB3NiJgsH-C-7to3hXtUYHaD-R28Vei8nw9Ut')">
+        <img src="https://imagedelivery.net/u8GMYyd0Bs8kckF-WHWZcg/ton/thumbnail" alt="TON" />
         <h3>🪙 TON Wallet</h3>
         <p>UQAKpnqJBO_ZB3NiJgsH-C-7to3hXtUYHaD-R28Vei8nw9Ut</p>
       </div>
 
       <div class="wallet sol" onclick="copyToClipboard('7p9E6n6ab2ctZLUdYvdCqFZEQ5YmMxoNgf2cnBcvZN7U')">
+        <img src="https://imagedelivery.net/u8GMYyd0Bs8kckF-WHWZcg/solana/thumbnail" alt="SOL" />
         <h3>🌞 Phantom Wallet (SOL)</h3>
         <p>7p9E6n6ab2ctZLUdYvdCqFZEQ5YmMxoNgf2cnBcvZN7U</p>
       </div>
 
       <div class="wallet legacy" onclick="copyToClipboard('0x678Aa08AB707CBa6d8eda67742358b8006F81829')">
+        <img src="https://imagedelivery.net/u8GMYyd0Bs8kckF-WHWZcg/legacy/thumbnail" alt="Legacy Wallet" />
         <h3>🕰️ Legacy Trust Wallet (ETH/BSC)</h3>
         <p>0x678Aa08AB707CBa6d8eda67742358b8006F81829</p>
       </div>
@@ -54,7 +60,6 @@
     <p>Made with 🧃 + ☁️ by MagicStone. Powered by Web3 and Gen-Z Energy 💫</p>
   </footer>
 
-  <!-- Clipboard Copy Script -->
   <script>
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
@@ -63,11 +68,6 @@
     }
   </script>
 
-  <!-- JS for advanced wallet logic -->
   <script src="wallet.js"></script>
 </body>
 </html>
-<script type="module">
-  import { wallets } from './wallets.js';
-  console.log("🧠 Wallets loaded", wallets);
-</script>
