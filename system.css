@@ -1,52 +1,48 @@
-/* system.css */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>🍎 MagicStone Wallets</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>🍎 MagicStone</h1>
+    <p>Welcome to the neo-iOS styled Web3-ready dashboard!</p>
+  </header>
 
-body {
-  background: linear-gradient(120deg, #ffffff, #f8f9fa);
-  color: #333;
-  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
-  margin: 0;
-  padding: 2rem;
-  animation: pulseBG 12s infinite;
-}
+  <main>
+    <section class="wallets">
+      <h2>🧿 Magic's Web3 Wallets</h2>
 
-h1 {
-  font-size: 2.5rem;
-  background: linear-gradient(to right, #007aff, #34c759, #ffcc00, #ff3b30);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 5s infinite linear;
-}
+      <div class="wallet eth" onclick="copyToClipboard('0x1396b538371366cc47ac0c5670bc6883588fa101')">
+        <h3>💰 Ethereum (ETH)</h3>
+        <p>0x1396b538371366cc47ac0c5670bc6883588fa101</p>
+      </div>
 
-@keyframes shimmer {
-  0% { background-position: -100% }
-  100% { background-position: 200% }
-}
+      <div class="wallet bnb" onclick="copyToClipboard('0x09b5CB3dD6b741826911d094bD2364123eEfb98F')">
+        <h3>🟡 Binance Smart Chain (BNB)</h3>
+        <p>0x09b5CB3dD6b741826911d094bD2364123eEfb98F</p>
+      </div>
 
-@keyframes pulseBG {
-  0% { background-color: #fff; }
-  50% { background-color: #f0f4f8; }
-  100% { background-color: #fff; }
-}
+      <div class="wallet ton" onclick="copyToClipboard('UQAKpnqJBO_ZB3NiJgsH-C-7to3hXtUYHaD-R28Vei8nw9Ut')">
+        <h3>🪙 TON</h3>
+        <p>UQAKpnqJBO_ZB3NiJgsH-C-7to3hXtUYHaD-R28Vei8nw9Ut</p>
+      </div>
+    </section>
+  </main>
 
-a {
-  color: #007aff;
-  text-decoration: none;
-  font-weight: 500;
-}
+  <footer>
+    <p>Built with 🧃 by Magic</p>
+  </footer>
 
-.container {
-  max-width: 800px;
-  margin: auto;
-  text-align: center;
-  padding-top: 10vh;
-}
-body.dark {
-  background-color: #111;
-  color: #eee;
-}
-@media (max-width: 500px) {
-  body {
-    font-size: 14px;
-    padding: 10px;
-  }
-}
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert("✅ Address copied to clipboard!");
+      });
+    }
+  </script>
+</body>
+</html>
