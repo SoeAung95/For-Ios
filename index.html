@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>🍎 MagicStone Wallets</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <h1>🍎 MagicStone</h1>
-    <p>Welcome to the neo-iOS styled Web3-ready dashboard!</p>
+    <p>🚀 Neo-iOS styled Web3 dashboard — just tap & copy!</p>
   </header>
 
   <main>
@@ -22,8 +22,13 @@
       </div>
 
       <div class="wallet bnb" onclick="copyToClipboard('0x09b5CB3dD6b741826911d094bD2364123eEfb98F')">
-        <h3>🟡 Binance Smart Chain (BNB)</h3>
+        <h3>🟡 Binance Smart Chain (BSC)</h3>
         <p>0x09b5CB3dD6b741826911d094bD2364123eEfb98F</p>
+      </div>
+
+      <div class="wallet sol" onclick="copyToClipboard('7p9E6n6ab2ctZLUdYvdCqFZEQ5YmMxoNgf2cnBcvZN7U')">
+        <h3>🧬 Solana (SOL / Phantom)</h3>
+        <p>7p9E6n6ab2ctZLUdYvdCqFZEQ5YmMxoNgf2cnBcvZN7U</p>
       </div>
 
       <div class="wallet ton" onclick="copyToClipboard('UQAKpnqJBO_ZB3NiJgsH-C-7to3hXtUYHaD-R28Vei8nw9Ut')">
@@ -34,9 +39,10 @@
   </main>
 
   <footer>
-    <p>Built with 🧃 by Magic</p>
+    <p>Built with 🧃 by Magic — Powered by <strong>wallet.js</strong></p>
   </footer>
 
+  <script src="wallet.js"></script>
   <script>
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
@@ -46,5 +52,3 @@
   </script>
 </body>
 </html>
-<script src="wallet.js"></script>
-<link rel="stylesheet" href="style.css">
