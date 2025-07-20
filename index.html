@@ -60,6 +60,7 @@
     <p>Made with 🧃 + ☁️ by MagicStone. Powered by Web3 and Gen-Z Energy 💫</p>
   </footer>
 
+  <!-- ✅ Inline Copy Function -->
   <script>
     function copyToClipboard(text) {
       navigator.clipboard.writeText(text).then(() => {
@@ -68,9 +69,20 @@
     }
   </script>
 
+  <!-- ✅ Wallet Config Script -->
   <script src="wallet.js"></script>
 
-  <!-- ✅ Cloudflare Web Analytics Script -->
+  <!-- ✅ Optional Config Script (future use) -->
+  <script src="config.js"></script>
+
+  <!-- ✅ Safe DOM-Ready Init Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("✨ DOM fully loaded. All scripts safe.");
+    });
+  </script>
+
+  <!-- ✅ Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ce9fcb41a8d480fb7b18a7195223ed2"}'></script>
 </body>
 </html>
