@@ -2,43 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>🍎 MagicStone Wallets</title>
-
-  <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="system.css" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Magic Wallets</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="wallets.js"></script>
+  <script defer src="wallet.js"></script>
+  <script defer src="lang.js"></script>
 </head>
-
 <body>
-  <header>
-    <img src="https://imagedelivery.net/u8GMYyd0Bs8kckF-WHWZcg/logo/ios-icon" alt="Logo" class="logo" />
-    <h1>🍎 MagicStone</h1>
-    <p>Welcome to your Web3-ready, iOS-styled dashboard. Tap to copy wallet addresses!</p>
-
+  <div class="top-bar">
     <label class="switch">
-      <input type="checkbox" id="modeToggle" />
+      <input type="checkbox" id="darkModeToggle"/>
       <span class="slider"></span>
     </label>
-  </header>
+    <label class="switch">
+      <input type="checkbox" id="langToggle"/>
+      <span class="slider">🌐</span>
+    </label>
+  </div>
 
-  <main>
-    <section class="wallets" id="walletContainer">
-      <h2>🧿 Magic’s Web3 Wallets</h2>
-    </section>
-  </main>
+  <h1 id="title">💼 Web3 Wallet Dashboard</h1>
+  <div id="walletsContainer" class="wallets-container"></div>
+
+  <button id="connectBtn" class="connect-button">🔌 Connect Wallet</button>
 
   <footer>
-    <p>Made with 🧃 + ☁️ by MagicStone. Powered by Web3 and Gen-Z Energy 💫</p>
+    <p><span id="footerText">Developed by Magic_Stone</span></p>
+    <a href="https://github.com/SoeAung95" target="_blank">GitHub</a> |
+    <a href="https://magicgmail.com" target="_blank">Portfolio</a>
   </footer>
-
-  <script src="wallets.js"></script>
-  <script src="wallet.js"></script>
-
-  <!-- ✅ Cloudflare Web Analytics Script -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4ce9fcb41a8d480fb7b18a7195223ed2"}'></script>
 </body>
 </html>
