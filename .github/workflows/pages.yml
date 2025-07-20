@@ -1,38 +1,22 @@
-name: 🚀 Deploy My Stylish iOS Page
-
-on:
-  push:
-    branches: [main]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: 🧹 Checkout Repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: 🛠️ Setup Pages
+      - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: 🎨 Build Magic Page (No Build Needed)
+      - name: No Build Needed
         run: echo "✨ No build required, using static files ✨"
 
-      - name: 📦 Upload Static Files
+      - name: Upload Static Files
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages  # <- ✅ explicitly name the artifact
-          path: '.'
+          name: github-pages  # 👈 This makes sure deploy step works
 
-      - name: 🚀 Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
         with:
-          artifact_name: github-pages  # <- ✅ ensure it picks the right one
+          artifact_name: github-pages  # 👈 This points to the uploaded files
