@@ -1,51 +1,69 @@
 /* Neon Gradient Background */
 body {
-  background: linear-gradient(-45deg, #1a1a40, #0f0c29, #302b63, #24243e);
-  background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+  background: linear-gradient(-45deg, #ff00cc, #3333ff, #00ffee, #ff6600);
+  background-size: 800% 800%;
+  animation: neonFlow 10s ease infinite;
   color: white;
-  font-family: 'SF Pro Display', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Neon Border */
-.card, .wallet-box, .neon-glow {
-  border: 2px solid #00f7ff;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff inset;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
+@keyframes neonFlow {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
-.card:hover, .wallet-box:hover {
-  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff inset;
+.dashboard {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
-/* Neon Text Glow */
-h1, h2, .neon-title {
-  color: #ffffff;
-  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px #ffffff;
 }
 
-/* Smooth Background Animation */
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Glow-on-click effect for buttons */
 button {
-  background-color: #1e1e2f;
-  color: white;
-  border: none;
   padding: 12px 24px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #00ffff;
+  font-size: 16px;
+  background: #00ffee;
+  color: #000;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 20px;
+  box-shadow: 0 0 10px #00ffee, 0 0 20px #00ffee;
   transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: #00ffff;
-  color: #000;
-  box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+  transform: scale(1.05);
+  background: #ff00cc;
+  box-shadow: 0 0 15px #ff00cc;
+}
+
+footer {
+  margin-top: 30px;
+  color: #ddd;
+}
+
+a {
+  color: #00ffee;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
