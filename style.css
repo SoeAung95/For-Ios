@@ -1,0 +1,52 @@
+# Paste the correct version
+git add style.css/* Neon Gradient Background */
+body {
+  background: linear-gradient(-45deg, #1a1a40, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: white;
+  font-family: 'SF Pro Display', sans-serif;
+}
+
+/* Neon Border */
+.card, .wallet-box, .neon-glow {
+  border: 2px solid #00f7ff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff inset;
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover, .wallet-box:hover {
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff inset;
+}
+
+/* Neon Text Glow */
+h1, h2, .neon-title {
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* Smooth Background Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow-on-click effect for buttons */
+button {
+  background-color: #1e1e2f;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #00ffff;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #00ffff;
+  color: #000;
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
