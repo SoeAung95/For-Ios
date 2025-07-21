@@ -35,3 +35,4 @@ function copyAddress(address) {
 document.getElementById("connect-btn").addEventListener("click", () => {
   alert("🔌 Web3 Connect Coming Soon!");
 });
+<script src="walletconnect.js"></script>
