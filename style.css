@@ -1,81 +1,51 @@
-:root {
-  --main-bg: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  --accent: #00ffe0;
-  --text: #ffffff;
-  --shadow: 0 8px 30px rgba(0, 255, 255, 0.2);
-  --glass: rgba(255, 255, 255, 0.1);
-}
-
+/* Neon Gradient Background */
 body {
-  margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background: var(--main-bg);
-  color: var(--text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  backdrop-filter: blur(12px);
+  background: linear-gradient(-45deg, #1a1a40, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: white;
+  font-family: 'SF Pro Display', sans-serif;
 }
 
-.dashboard {
-  padding: 2rem;
-  border-radius: 20px;
-  background: var(--glass);
-  box-shadow: var(--shadow);
-  text-align: center;
-  width: 90%;
-  max-width: 500px;
+/* Neon Border */
+.card, .wallet-box, .neon-glow {
+  border: 2px solid #00f7ff;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff inset;
+  background-color: rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease-in-out;
 }
 
-.wallet {
-  margin: 1.5rem 0;
+.card:hover, .wallet-box:hover {
+  box-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff inset;
 }
 
-.wallet-card {
-  background: #1e1e2f;
-  border-radius: 16px;
-  padding: 1rem;
-  margin: 1rem 0;
-  color: #fff;
-  box-shadow: 0 0 15px #00ffe0aa;
-  transition: transform 0.2s ease;
-}
-.wallet-card:hover {
-  transform: scale(1.03);
+/* Neon Text Glow */
+h1, h2, .neon-title {
+  color: #ffffff;
+  text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-.copy-btn {
-  margin-left: 10px;
-  background: var(--accent);
+/* Smooth Background Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow-on-click effect for buttons */
+button {
+  background-color: #1e1e2f;
+  color: white;
   border: none;
+  padding: 12px 24px;
   border-radius: 8px;
-  padding: 4px 10px;
-  cursor: pointer;
+  box-shadow: 0 0 10px #00ffff;
+  transition: all 0.3s ease;
 }
 
-#connect-btn {
-  background: var(--accent);
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 12px;
+button:hover {
+  background-color: #00ffff;
   color: #000;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 10px #00ffe088;
-  transition: background 0.3s ease;
-}
-#connect-btn:hover {
-  background: #00ccbe;
-}
-
-footer {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-footer a {
-  color: var(--accent);
-  text-decoration: none;
+  box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
 }
