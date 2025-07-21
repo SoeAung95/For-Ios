@@ -1,19 +1,14 @@
 {
-  "name": "Magic Wallet Dashboard",
+  "name": "Magic Web3 Dashboard",
   "short_name": "MagicWallet",
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#1e1e1e",
+  "theme_color": "#000000",
   "icons": [
     {
-      "src": "https://imagedelivery.net/your-cdn-icon-path/apple-icon-192.png",
+      "src": "apple-touch-icon.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://imagedelivery.net/your-cdn-icon-path/apple-icon-512.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ]
