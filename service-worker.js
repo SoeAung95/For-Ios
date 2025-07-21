@@ -1,43 +1,15 @@
-const CACHE_NAME = "magicwallet-v1";
-const urlsToCache = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/wallet.js",
-  "/favicon.ico",
-  "/apple-touch-icon.png",
-  "/manifest.json"
-];
-
-// Install
-self.addEventListener("install", (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(urlsToCache);
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open("magic-cache").then(cache => {
+      return cache.addAll(["/", "/index.html", "/style.css", "/wallet.js"]);
     })
   );
 });
 
-// Activate
-self.addEventListener("activate", (event) => {
-  event.waitUntil(
-    caches.keys().then((cacheNames) =>
-      Promise.all(
-        cacheNames.map((name) => {
-          if (name !== CACHE_NAME) {
-            return caches.delete(name);
-          }
-        })
-      )
-    )
-  );
-});
-
-// Fetch
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+self.addEventListener("fetch", e => {
+  e.respondWith(
+    caches.match(e.request).then(response => {
+      return response || fetch(e.request);
     })
   );
 });
