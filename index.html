@@ -3,33 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Magic Wallets</title>
+  <title>🌐 Magic Web3 Dashboard</title>
   <link rel="stylesheet" href="style.css"/>
-  <script defer src="wallets.js"></script>
   <script defer src="wallet.js"></script>
-  <script defer src="lang.js"></script>
 </head>
 <body>
-  <div class="top-bar">
-    <label class="switch">
-      <input type="checkbox" id="darkModeToggle"/>
-      <span class="slider"></span>
-    </label>
-    <label class="switch">
-      <input type="checkbox" id="langToggle"/>
-      <span class="slider">🌐</span>
-    </label>
+  <div class="dashboard">
+    <h1>💼 Web3 Wallet Dashboard</h1>
+
+    <div class="wallet" id="wallets-container">
+      <!-- Wallets auto-rendered from JS -->
+    </div>
+
+    <button id="connect-btn">🔌 Connect Wallet</button>
+
+    <footer>
+      <p>Developed by <strong>Magic_Stone</strong></p>
+      <a href="https://github.com/SoeAung95" target="_blank">GitHub</a> |
+      <a href="https://magicgmail.com" target="_blank">Portfolio</a>
+    </footer>
   </div>
-
-  <h1 id="title">💼 Web3 Wallet Dashboard</h1>
-  <div id="walletsContainer" class="wallets-container"></div>
-
-  <button id="connectBtn" class="connect-button">🔌 Connect Wallet</button>
-
-  <footer>
-    <p><span id="footerText">Developed by Magic_Stone</span></p>
-    <a href="https://github.com/SoeAung95" target="_blank">GitHub</a> |
-    <a href="https://magicgmail.com" target="_blank">Portfolio</a>
-  </footer>
 </body>
 </html>
