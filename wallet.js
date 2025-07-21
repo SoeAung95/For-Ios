@@ -1,29 +1,37 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.getElementById("walletsContainer");
-  wallets.forEach((wallet) => {
-    const div = document.createElement("div");
-    div.className = "wallet";
-    div.innerHTML = `
-      <p><strong>${wallet.name}</strong></p>
-      <p>${wallet.address}</p>
-      <button onclick="copyToClipboard('${wallet.address}', this)">📋</button>
-    `;
-    container.appendChild(div);
-  });
+const wallets = [
+  {
+    name: "Binance ETH",
+    address: "0x09b5CB3dD6b741826911d094bD2364123eEfb98F",
+  },
+  {
+    name: "Bitget BNB",
+    address: "0x81635e976371EB488d5079ED46c2073F7Da2edC5",
+  },
+  {
+    name: "Phantom SOL",
+    address: "CmV5fKHWEkEDVzvuGcK12Qv8gq9XwXbe4zbjcG6LnTnc",
+  },
+];
 
-  document.getElementById("darkModeToggle").addEventListener("change", (e) => {
-    document.body.classList.toggle("dark-mode", e.target.checked);
-    localStorage.setItem("darkMode", e.target.checked);
-  });
+const walletsContainer = document.getElementById("wallets-container");
 
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
-  document.getElementById("darkModeToggle").checked = savedDarkMode;
-  document.body.classList.toggle("dark-mode", savedDarkMode);
+wallets.forEach((wallet) => {
+  const card = document.createElement("div");
+  card.className = "wallet-card";
+  card.innerHTML = `
+    <h3>${wallet.name}</h3>
+    <p>${wallet.address}</p>
+    <button class="copy-btn" onclick="copyAddress('${wallet.address}')">📋</button>
+  `;
+  walletsContainer.appendChild(card);
 });
 
-function copyToClipboard(text, btn) {
-  navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = "✅";
-    setTimeout(() => (btn.textContent = "📋"), 1000);
+function copyAddress(address) {
+  navigator.clipboard.writeText(address).then(() => {
+    alert("✅ Address Copied");
   });
 }
+
+document.getElementById("connect-btn").addEventListener("click", () => {
+  alert("🔌 Web3 Connect Coming Soon!");
+});
