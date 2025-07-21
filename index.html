@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌐 Magic Web3 Dashboard</title>
+
+  <!-- Apple / PWA Meta -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MagicWallet">
+  <meta name="theme-color" content="#1e1e1e">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Styles & Scripts -->
+  <link rel="stylesheet" href="style.css"/>
+  <script defer src="wallet.js"></script>
+</head>
+<body>
+  <div class="dashboard">
+    <h1>💼 Web3 Wallet Dashboard</h1>
+
+    <div class="wallet" id="wallets-container">
+      <!-- Wallets auto-rendered from JS -->
+    </div>
+
+    <button id="connect-btn">🔌
+      Connect Wallet</button>
+
+    <footer>
+      <p>Developed by <strong>Magic_Stone</strong></p>
+      <a href="https://github.com/SoeAung95" target="_blank">GitHub</a> |
+      <a href="https://magicgmail.com" target="_blank">Portfolio</a>
+    </footer>
+  </div>
+
+  <!-- Service Worker Register -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log("✅ Service Worker registered"))
+        .catch(err => console.error("❌ Service Worker registration failed:", err));
+    }
+  </script>
+</body>
+</html>
+<div style="margin-top: 30px; text-align: center;">
+  <button onclick="connectWallet()" class="wallet-button">🔌 Connect Wallet</button>
+  <p id="wallet-address" style="margin-top: 10px;"></p>
+  <p id="network-info"></p>
+</div>
