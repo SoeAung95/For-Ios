@@ -22,7 +22,10 @@
   <!-- WalletConnect & Web3.js -->
   <script src="https://unpkg.com/@walletconnect/web3-provider/dist/umd/index.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/web3@1.10.0/dist/web3.min.js"></script>
-  <script defer src="wallet.js"></script>
+
+  <!-- 🔑 Load .env.js BEFORE wallet.js -->
+  <script src="env.js"></script> <!-- Contains: window.OPENAI_API_KEY = "sk-..." -->
+  <script defer src="wallet.js"></script> <!-- Main wallet interaction script -->
 </head>
 <body>
   <div class="dashboard">
@@ -42,7 +45,7 @@
     </footer>
   </div>
 
-  <!-- Service Worker Register -->
+  <!-- ⚙️ Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js')
