@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Load .env
+if [ -f .env ]; then
+  export $(grep -v '^#' .env | xargs)
+fi
+
+echo "Welcome to GPT CLI p
+ (type 'exit' to quit)"
+
+while true; do
+  printf "You: "
+  read user_input
+
+  if [ "$user_input" = "exit" ]; then
+    echo "Goodbye!"
+    break
+  fi
+
+  response=$(curl -s https://api.openai.com/v1/chat/completions \
+    -H "Authorization: Bearer $OPENAI_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{
+      \"model\": \"gpt-4o\",
+      \"messages\": [{\"role\": \"user\", \"content\": \"$user_input\"}],
+      \"temperature\": 0.7
+    }")
+
+  answer=$(echo "$response" | jq -r '.choices[0].message.content')
+
+  if [ "$answer" = "null" ]; then
+    echo "b

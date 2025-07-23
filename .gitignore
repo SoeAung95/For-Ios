@@ -6,3 +6,5 @@ wallet.js
 node_modules/
 dist/
 .env.local
+.env
+.env.js
