@@ -36,3 +36,4 @@ document.getElementById("connect-btn").addEventListener("click", () => {
   alert("🔌 Web3 Connect Coming Soon!");
 });
 <script src="walletconnect.js"></script>
+console.log("🔌 WalletConnect integration phase started!");
