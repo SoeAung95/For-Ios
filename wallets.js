@@ -12,3 +12,4 @@ const wallets = [
     address: "CmV5fKHWEkEDVzvuGcK12Qv8gq9XwXbe4zbjcG6LnTnc"
   }
 ];
+console.log("🔌 WalletConnect integration phase started!");
