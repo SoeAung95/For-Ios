@@ -1,17 +1,6 @@
+.env.js
 .env
-<<<<<<< HEAD
-*.env
-!.env.js       # allow .env.js NOT to be ignored
-*.secret
-
-node_modules/
-dist/
-For-Ios/
-.env.js
-.env.js
-.env.js
-.env.js
-=======
-bin/
+/node_modules
+/dist
+.DS_Store
 *.log
->>>>>>> d87c0d6ac7320d342497811ccd51f87f02520533
