@@ -1,0 +1,24 @@
+You: 
+GPT: null
+You: hello gpt
+GPT: null
+You: what is
+GPT: null
+You: 
+GPT: null
+You: hello
+GPT: null
+You: echo $OPENAI_API_KEY
+GPT: null
+You: exit ()
+GPT: null
+You: hello
+GPT: Hello! How can I assist you today?
+You: hello
+GPT: null
+You: hello
+GPT: null
+You: hello
+GPT: null
+You: nano loop-chat.sh
+GPT: null
