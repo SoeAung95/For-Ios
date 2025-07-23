@@ -1,4 +1,4 @@
-/* Neon Gradient Background */
+/* 🌈 Neon Gradient Background */
 body {
   margin: 0;
   padding: 0;
@@ -12,29 +12,33 @@ body {
   overflow-x: hidden;
 }
 
+/* 🌊 Background Animation */
 @keyframes neonFlow {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
+/* 💻 Dashboard Container */
 .dashboard {
   max-width: 800px;
   margin: 0 auto;
   padding: 40px;
   text-align: center;
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   backdrop-filter: blur(10px);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
+/* 🪪 Header */
 h1 {
   font-size: 2em;
   margin-bottom: 20px;
   text-shadow: 0 0 8px #ffffff;
 }
 
+/* ✨ Buttons */
 button {
   padding: 12px 24px;
   font-size: 16px;
@@ -54,11 +58,37 @@ button:hover {
   box-shadow: 0 0 15px #ff00cc;
 }
 
-footer {
-  margin-top: 30px;
-  color: #ddd;
+/* 📱 Wallet Cards */
+.wallet-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
 }
 
+/* ✂️ Copy Button */
+.copy-btn {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background: #00ffee;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 5px #00ffee;
+  transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+  background: #ff00cc;
+  box-shadow: 0 0 8px #ff00cc;
+}
+
+/* 🌐 Links */
 a {
   color: #00ffee;
   text-decoration: none;
@@ -66,4 +96,13 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+/* 🔻 Footer */
+footer {
+  margin-top: 30px;
+  color: #ddd;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
 }
