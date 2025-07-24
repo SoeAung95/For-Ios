@@ -1,22 +1,34 @@
-# 🌐 Magic Web3 Dashboard (iOS Style)
+# 🌟 For-IOS Web3 Dashboard
 
-A sleek, mobile-first Web3 wallet dashboard built with iOS-inspired UI.  
-Supports WalletConnect, neon animated backgrounds, and is installable as a Progressive Web App (PWA).
+Welcome to the **For-Ios** Web3 Dashboard, fully optimized for iPhone users with stylish iOS-like UI & verified GPG commits.
 
-## 🚀 Live Preview
-🌍 [magicgmail.com](https://magicgmail.com)
+---
 
-## ✨ Features
-- 🔌 WalletConnect integration
-- ⚡ Neon animated background
-- 📱 PWA support for iOS/Android
-- 💼 Multi-wallet display (Binance, Bitget, Phantom, etc)
-- 🍎 iOS-style layout with blurred glass effect
-- 📂 Offline support with service worker
-- 🔐 `.env.js` for secret keys & env separation
+## 🔐 GPG Signature
 
-## 📦 Setup
+All commits are cryptographically signed with [Magic Stone's GPG key](https://github.com/SoeAung95.gpg).  
+Ensures authenticity and trust.
 
-```bash
-git clone https://github.com/SoeAung95/For-Ios.git
-cd For-Ios
+![GPG Verified](https://img.shields.io/badge/GPG-Signed-4caf50?style=for-the-badge&logo=gnuprivacyguard&logoColor=white)
+
+---
+
+## 🚀 Features
+
+- ✅ iOS-like UI for Web3 Wallets
+- 🌐 PWA Support (Add to Home Screen)
+- 🔄 WalletConnect + Balance Display
+- 🔐 Signed Commits (Verified by GitHub)
+- 🌈 Stylish Neon Animations
+
+---
+
+## 📇 Developer
+
+**Soe Aung (Magic Stone)**  
+🔗 [magicgmail.com](https://magicgmail.com)  
+📮 `krystalrosy.magic@gmail.com`
+
+---
+
+> 🧙 Magic is not real, but Verified GPG Commits are 😉  
