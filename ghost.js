@@ -3,14 +3,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const userInput = document.getElementById("userInput");
   const chatBox = document.getElementById("chatBox");
 
+  // Message ကို chat box ထဲထည့်ဖို့ function
   const appendMessage = (text, sender = "bot") => {
     const message = document.createElement("div");
     message.className = `message ${sender}`;
     message.textContent = text;
     chatBox.appendChild(message);
-    chatBox.scrollTop = chatBox.scrollHeight;
+    chatBox.scrollTop = chatBox.scrollHeight;  // Scroll အောက်ဆုံးသို့ auto မောင်း
   };
 
+  // OpenAI API ကို ခေါ်ဆိုပြီး response ရလာတာနဲ့ ပြန်ပြောစေမယ်
   const callOpenAI = async (message) => {
     try {
       if (!window.env) throw new Error("❌ .env.js not loaded");
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // User စာပို့တာကို စောင့်ပြီး အပလီလေးသွားမယ်
   chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const message = userInput.value.trim();
