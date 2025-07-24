@@ -1,4 +1,4 @@
-/* system.css – optional enhancement for more glassy iOS style */
+/* system.css – Polished for a glassy iOS-inspired vibe */
 
 :root {
   --radius: 14px;
@@ -12,6 +12,12 @@ body {
   background: linear-gradient(to bottom, #f1f2f6, #dbe4f3);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   transition: background var(--transition-speed);
+  color: #111;
+}
+
+body.dark {
+  background: radial-gradient(circle at top left, #1e1e2f, #121217);
+  color: #f1f1f1;
 }
 
 .wallet {
@@ -21,11 +27,11 @@ body {
   -webkit-backdrop-filter: var(--backdrop-blur);
   border: var(--glass-border);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  transition: transform var(--transition-speed);
 }
 
 .wallet:hover {
   transform: scale(1.03);
-  transition: transform var(--transition-speed);
 }
 
 header, footer {
@@ -36,8 +42,8 @@ header, footer {
 }
 
 button, .wallet {
-  transition: all var(--transition-speed);
   cursor: pointer;
+  transition: all var(--transition-speed);
 }
 
 h1, h2, h3 {
