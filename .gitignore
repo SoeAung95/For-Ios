@@ -1,7 +1,6 @@
 .env
 *.env
 *.secret
-.env.*
 wallet.js
 node_modules/
 dist/
