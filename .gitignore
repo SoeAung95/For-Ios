@@ -1,9 +1,10 @@
 # Ignore most env/secrets, but allow .env.js
 .env
 *.env
-!.env.js
+!*.env.js        # ✅ wildcard-based allow
 *.secret
-.env.js
+# .env.js        ← ❌ ဒီကြောင်းကိုဖျက်ပါ
+
 # Usual node junk
 node_modules/
 dist/
