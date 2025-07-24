@@ -37,3 +37,6 @@ document.getElementById("connect-btn").addEventListener("click", () => {
 });
 <script src="walletconnect.js"></script>
 console.log("🔌 WalletConnect integration phase started!");
+window.AppKit?.init({
+  projectId: "68c83846ab42aa0d7c24227e42596735"
+});
