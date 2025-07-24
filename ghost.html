@@ -6,9 +6,6 @@
   <title>Ghost Assistant 👻</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <script src=".env.js"></script>
-  <script src="ghost.js" defer></script>
-  <script src="wallet-auth.js" defer></script>
 </head>
 <body>
   <section id="ghost-assistant">
@@ -20,5 +17,14 @@
       <button type="submit">➤</button>
     </form>
   </section>
+
+  <!-- ✅ Load env first -->
+  <script type="text/javascript" src=".env.js"></script>
+
+  <!-- ✅ Then load the assistant logic -->
+  <script type="text/javascript" src="ghost.js"></script>
+
+  <!-- ✅ Wallet connect script (optional) -->
+  <script type="text/javascript" src="wallet-auth.js"></script>
 </body>
 </html>
