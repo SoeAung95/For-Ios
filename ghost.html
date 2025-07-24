@@ -3,20 +3,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GPT Ghost Assistant 👻</title>
+  <title>Ghost Assistant 👻</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
+  <script src=".env.js"></script>
+  <script src="ghost.js" defer></script>
+  <script src="wallet-auth.js" defer></script>
 </head>
 <body>
-  <main id="chat">
-    <div id="messages"></div>
-    <div class="input-group">
-      <input type="text" id="user-input" placeholder="Type your message..." />
-      <button onclick="sendMessage()">Send</button>
+  <section id="ghost-assistant">
+    <div class="chat-box" id="chatBox">
+      <div class="message bot">👻 Hi, I’m Ghost! Ask me anything.</div>
     </div>
-  </main>
-  <script src="ghost.js"></script>
-  <script src="wallet-auth.js"></script>
-  <script src=".env.js"></script>
+    <form id="chatForm">
+      <input type="text" id="userInput" placeholder="Say something..." autocomplete="off" required />
+      <button type="submit">➤</button>
+    </form>
+  </section>
 </body>
 </html>
