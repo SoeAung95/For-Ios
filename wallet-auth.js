@@ -1,14 +1,24 @@
 // wallet-auth.js
 window.addEventListener("load", async () => {
+  if (!window.env.WALLET_REQUIRED) return;
+
+  let address = "";
   if (window.ethereum) {
     try {
       const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
-      const address = accounts[0];
-      appendMessage("System", `👛 Wallet connected: ${address}`);
-    } catch (err) {
-      appendMessage("System", "❌ Wallet connection rejected.");
+      address = accounts[0];
+    } catch {
+      alert("🦊 MetaMask connection rejected.");
     }
   } else {
-    appendMessage("System", "⚠️ MetaMask not found. Please install it.");
+    alert("❌ No wallet found. Install MetaMask or use WalletConnect.");
+  }
+
+  if (address) {
+    const chatBox = document.getElementById("chatBox");
+    const walletMsg = document.createElement("div");
+    walletMsg.className = "message bot";
+    walletMsg.textContent = `🔓 Wallet connected: ${address}`;
+    chatBox.appendChild(walletMsg);
   }
 });
