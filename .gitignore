@@ -1,11 +1,8 @@
-# Ignore most env/secrets, but allow .env.js
+# Ignore all env files (including .env.js)
 .env
 *.env
-!*.env.js     # ✅ This line allows .env.js
-*.secret
-# .env.js     ← ❌ This line must be removed! It cancels the line above
+.env.js
 
-# Usual node junk
+# Node junk
 node_modules/
 dist/
-For-Ios/
