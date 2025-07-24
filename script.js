@@ -1,3 +1,6 @@
+// script.js — Neon Ray Background + Web3 UI Hooks
+
+// 🌟 Canvas Ray Animation
 const canvas = document.getElementById('rays');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
@@ -32,10 +35,20 @@ function drawRays() {
 }
 drawRays();
 
-// optional Web3 wallet connect
+// 🧩 UI Hook: Connect Wallet Button
 function connectWallet() {
-  alert("Web3 Wallet Connect Coming Soon 🚀");
+  alert("🔗 Web3 Wallet Connect Coming Soon via WalletConnect 🚀");
 }
+
+// 🌗 UI Hook: Dark Mode Toggle
 function toggleTheme() {
   document.body.classList.toggle("dark");
+  localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
 }
+
+// 🌈 Persist theme across reloads
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark");
+  }
+});
