@@ -32,3 +32,4 @@ Ensures authenticity and trust.
 ---
 
 > 🧙 Magic is not real, but Verified GPG Commits are 😉  
+![GPG Verified](https://img.shields.io/badge/GPG-verified-green?logo=gnupg)
