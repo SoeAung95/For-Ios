@@ -1,37 +1,48 @@
 // ghost.js
-async function sendMessage() {
-  const input = document.getElementById("user-input");
-  const message = input.value;
-  if (!message) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("chatForm");
+  const input = document.getElementById("userInput");
+  const chatBox = document.getElementById("chatBox");
 
-  appendMessage("You", message);
-  input.value = "";
+  const addMessage = (text, type = "user") => {
+    const div = document.createElement("div");
+    div.className = `message ${type}`;
+    div.textContent = text;
+    chatBox.appendChild(div);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  };
 
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${OPENAI_API_KEY}`
-    },
-    body: JSON.stringify({
-      model: "gpt-4o",
-      messages: [
-        { role: "system", content: "You are a helpful assistant with no memory." },
-        { role: "user", content: message }
-      ]
-    })
+  const sendMessage = async (message) => {
+    addMessage(message, "user");
+
+    try {
+      const res = await fetch(window.env.OPENAI_API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${window.env.OPENAI_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: window.env.MODEL,
+          messages: [{ role: "user", content: message }],
+          temperature: 0.7,
+          max_tokens: 1000,
+        }),
+      });
+
+      const data = await res.json();
+      const reply = data.choices?.[0]?.message?.content || "⚠️ No response";
+      addMessage(reply, "bot");
+    } catch (e) {
+      addMessage("❌ Error: " + e.message, "bot");
+    }
+  };
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const msg = input.value.trim();
+    if (!msg) return;
+    input.value = "";
+    sendMessage(msg);
   });
-
-  const data = await response.json();
-  const reply = data.choices[0].message.content.trim();
-  appendMessage("Ghost", reply);
-}
-
-function appendMessage(sender, text) {
-  const messages = document.getElementById("messages");
-  const div = document.createElement("div");
-  div.className = sender.toLowerCase();
-  div.innerHTML = `<strong>${sender}:</strong> ${text}`;
-  messages.appendChild(div);
-  messages.scrollTop = messages.scrollHeight;
-}
+});
