@@ -3,7 +3,7 @@
 *.env
 !.env.js
 *.secret
-
+.env.js
 # Usual node junk
 node_modules/
 dist/
