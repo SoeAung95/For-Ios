@@ -1,48 +1,52 @@
-// ghost.js
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("chatForm");
-  const input = document.getElementById("userInput");
+  const chatForm = document.getElementById("chatForm");
+  const userInput = document.getElementById("userInput");
   const chatBox = document.getElementById("chatBox");
 
-  const addMessage = (text, type = "user") => {
-    const div = document.createElement("div");
-    div.className = `message ${type}`;
-    div.textContent = text;
-    chatBox.appendChild(div);
+  const appendMessage = (text, sender = "bot") => {
+    const message = document.createElement("div");
+    message.className = `message ${sender}`;
+    message.textContent = text;
+    chatBox.appendChild(message);
     chatBox.scrollTop = chatBox.scrollHeight;
   };
 
-  const sendMessage = async (message) => {
-    addMessage(message, "user");
-
+  const callOpenAI = async (message) => {
     try {
-      const res = await fetch(window.env.OPENAI_API_ENDPOINT, {
+      if (!window.env) throw new Error("❌ .env.js not loaded");
+      const endpoint = window.env.OPENAI_API_ENDPOINT;
+      const apiKey = window.env.OPENAI_API_KEY;
+      const model = window.env.ASSISTANT_MODEL || "gpt-4o";
+
+      const response = await fetch(endpoint, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${window.env.OPENAI_API_KEY}`,
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: window.env.MODEL,
-          messages: [{ role: "user", content: message }],
-          temperature: 0.7,
-          max_tokens: 1000,
-        }),
+          model,
+          messages: [{ role: "user", content: message }]
+        })
       });
 
-      const data = await res.json();
-      const reply = data.choices?.[0]?.message?.content || "⚠️ No response";
-      addMessage(reply, "bot");
-    } catch (e) {
-      addMessage("❌ Error: " + e.message, "bot");
+      const data = await response.json();
+      const reply = data.choices?.[0]?.message?.content?.trim() || "🤖 Error: No response from Ghost!";
+      appendMessage(reply, "bot");
+
+    } catch (error) {
+      console.error("💥 OpenAI error:", error);
+      appendMessage(`❌ Error: ${error.message}`, "bot");
     }
   };
 
-  form.addEventListener("submit", (e) => {
+  chatForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const msg = input.value.trim();
-    if (!msg) return;
-    input.value = "";
-    sendMessage(msg);
+    const message = userInput.value.trim();
+    if (!message) return;
+
+    appendMessage(message, "user");
+    userInput.value = "";
+    callOpenAI(message);
   });
 });
