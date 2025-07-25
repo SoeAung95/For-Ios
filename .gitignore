@@ -1,9 +1,8 @@
-# Ignore all env files (including .env.js)
 .env
 *.env
-.env.js
+!.env.js       # a
+*.secret
 
-# Node junk
 node_modules/
 dist/
 For-Ios/
