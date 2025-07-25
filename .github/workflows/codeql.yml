@@ -1,40 +1,38 @@
-- uses: github/codeql-action/init@v3
-- uses: github/codeql-action/analyze@v3git add .
-git commit -S -m "pgit push origin fix/codeql-tweakname: "CodeQL"
-
+name: "p
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
-  workflow_dispatch:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * 0' # every Sunday
+
+permissions:
+  contents: read
+  security-events: write
 
 jobs:
   analyze:
-    name: Analyze
+    name: "Analyze (JavaScript)"
     runs-on: ubuntu-latest
-
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+    timeout-minutes: 360
 
     strategy:
       fail-fast: false
       matrix:
-        language: [javascript] # ✨ စမ်းသပ်တာဆိုရင် JS, Python, Go စတာတွေထည့်လို့ရ
+        language: [ 'javascript' ]
 
     steps:
-      - name: 🧾 Checkout repository
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: 🛠️ Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
-          languages: ${{ matrix.language }}
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: ${{ matrix.language }}
 
-      - name: 🔨 Autobuild
-        uses: github/codeql-action/autobuild@v2
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
 
-      - name: 🔍 Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v2
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
