@@ -1,6 +1,6 @@
 .env
 *.env
-- !.env.js       # a
+!.env.js       # allow .env.js NOT to be ignored
 *.secret
 
 node_modules/
