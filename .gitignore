@@ -1,9 +1,3 @@
-# ⛔ Never commit API keys
-.env.js
-
-# Node, iOS, and other defaults
-node_modules/
-.DS_Store
 .env
+bin/
 *.log
-dist/
