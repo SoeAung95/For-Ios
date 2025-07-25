@@ -38,3 +38,5 @@
 - WalletConnect v2.0
 - Cloudflare Image CDN
 - iSH (Alpine Linux on iOS)
+- ### 🔐 API Keys
+Create `.env.js` from `.env.sample.js` with your own keys.
