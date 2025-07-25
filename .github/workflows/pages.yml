@@ -15,7 +15,10 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages  # ✅ Required for GitHub Pages to deploy
+
     runs-on: ubuntu-latest
     steps:
       - name: 📦 Checkout repository
@@ -27,13 +30,7 @@ jobs:
       - name: 📤 Upload site artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: './'  # ← change this if you're using a "dist" folder
+          path: './'  # 🔁 Update if you're building to /dist or /build
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: github-pages  # ← 🔥 Required for successful deployment
-    steps:
       - name: 🚀 Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
