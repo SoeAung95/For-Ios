@@ -1,4 +1,5 @@
-git add .
+- uses: github/codeql-action/init@v3
+- uses: github/codeql-action/analyze@v3git add .
 git commit -S -m "pgit push origin fix/codeql-tweakname: "CodeQL"
 
 on:
