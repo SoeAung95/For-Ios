@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: '0 0 * * 0' # every Sunday at midnight
 
 jobs:
   analyze:
@@ -23,7 +23,7 @@ jobs:
         language: [javascript]
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Initialize CodeQL
@@ -34,5 +34,5 @@ jobs:
       - name: Autobuild
         uses: github/codeql-action/autobuild@v3
 
-      - name: Run CodeQL Analysis
+      - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
