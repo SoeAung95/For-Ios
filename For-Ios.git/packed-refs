@@ -1,0 +1,19 @@
+# pack-refs with: peeled fully-peeled sorted 
+814983244c7410ded8a75ea07760e76dd38b4bf6 refs/heads/feat/awesome-feature
+6b844eb92009f28864f09c5e4a476afb0e5969fa refs/heads/feat/fix-link-issues
+a6c38d67d9e2dde4fa5a6a08a6b1a9a2d735cc4e refs/heads/feat/neon-darkmode
+f9972b078b4ceb9acfc38076ba5affd6af3974d9 refs/heads/main
+f6cbe58db81d6ea5936b9c7ddfcaaf527f4df9d4 refs/heads/my-feature
+434e412908a2ef8b7a6db12543c84e7f033a12f8 refs/pull/15/head
+330cc048b38d851173e5a8baf5888cfbcf4dd5dd refs/pull/28/head
+58a8c0042e6df9b4975f9a4749b38d477bd4a568 refs/pull/30/head
+5378592f55f09e158cd2702d8ac0bed1ebd4f89d refs/pull/31/head
+a305755a9e5a15b57e11189af3567e3170f130ff refs/pull/32/head
+190f52d2c9dd472c7fc4fe1559cc7f25f7c4f8a9 refs/pull/33/head
+6b844eb92009f28864f09c5e4a476afb0e5969fa refs/pull/34/head
+ddbc91e5b3c36b379aa53ec544ebdf6b179012aa refs/pull/34/merge
+a6c38d67d9e2dde4fa5a6a08a6b1a9a2d735cc4e refs/pull/35/head
+75c3f4f883008759f680f542fcfce956a58ec4b1 refs/pull/35/merge
+78f908407d54d5bf6e768a16fbebea94d262f764 refs/pull/36/head
+37812bb78faeb6c0f099f6e2c7faa8348116aa70 refs/pull/5/head
+e6ffdc632842f3c0de2504d1f142fbbcf4e20e50 refs/tags/v1.0.0
