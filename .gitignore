@@ -1,12 +1,9 @@
-.env
-*.env
-!.env.js       # allow .env.js NOT to be ignored
-*.secret
+# ⛔ Never commit API keys
+.env.js
 
+# Node, iOS, and other defaults
 node_modules/
+.DS_Store
+.env
+*.log
 dist/
-For-Ios/
-.env.js
-.env.js
-.env.js
-.env.js
