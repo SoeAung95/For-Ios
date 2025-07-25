@@ -1,4 +1,5 @@
 .env
+<<<<<<< HEAD
 *.env
 !.env.js       # allow .env.js NOT to be ignored
 *.secret
@@ -10,3 +11,7 @@ For-Ios/
 .env.js
 .env.js
 .env.js
+=======
+bin/
+*.log
+>>>>>>> d87c0d6ac7320d342497811ccd51f87f02520533
