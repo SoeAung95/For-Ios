@@ -1,4 +1,5 @@
-name: "CodeQL"
+git add .
+git commit -S -m "pgit push origin fix/codeql-tweakname: "CodeQL"
 
 on:
   push:
