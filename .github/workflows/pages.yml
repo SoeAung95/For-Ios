@@ -25,7 +25,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: 📤 Upload site artifact
-        uses: actions/upload-pages-artifact@v4  # 🆙 Updated from v3 to v4
+        uses: actions/upload-pages-artifact@v3.0.1  # ✅ v4 not available; use latest v3
         with:
           path: './'  # If your site output is in a subfolder like "dist", change this
 
