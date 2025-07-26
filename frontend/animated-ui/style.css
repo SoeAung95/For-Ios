@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(-45deg, #ff5f6d, #ffc371, #48c6ef, #6f86d6);
+  background-size: 400% 400%;
+  animation: gradientFlow 12s ease infinite;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rainbow-container {
+  backdrop-filter: blur(8px);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(255,255,255,0.3);
+  transition: transform 0.2s;
+}
+
+.rainbow-container:hover {
+  transform: scale(1.03);
+}
+
+button {
+  background: white;
+  color: #333;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ff5f6d;
+  color: white;
+}
