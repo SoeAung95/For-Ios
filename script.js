@@ -1,4 +1,4 @@
-// script.js — Neon Ray Background + Web3 UI Hooks
+# a// nano system.cssscript.js — Neon Ray Background + Web3 UI Hooks
 
 // 🌟 Canvas Ray Animation
 const canvas = document.getElementById('rays');
