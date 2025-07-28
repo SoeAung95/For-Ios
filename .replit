@@ -1,0 +1,18 @@
+run = "go run main.go"
+
+[interpreter]
+language = "go"
+
+[env]
+PORT = "8080"
+
+[deployment]
+run = ["go", "run", "main.go"]
+deploymentTarget = "cloudrun"
+
+[network]
+internalPort = 8080
+externalPort = 8080
+
+[[ports]]
+port = 8080
