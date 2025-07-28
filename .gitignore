@@ -5,3 +5,4 @@
 .DS_Store
 *.log
 FETCH_HEAD
+.env.js
